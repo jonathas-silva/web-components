@@ -1,0 +1,99 @@
+* {
+    font-family: Helvetica;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ESTILIZAÇÃO OPCIONAL, NÃO INFLUENCIANDO NO FUNCIONAMENTO DO MODAL */
+
+body {
+    padding: 1rem;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+button {
+    padding: .6rem 1.2rem;
+    background-color: #888;
+    color: #fff;
+    border: none;
+    border-radius: .25rem;
+    cursor: pointer;
+    opacity: .8;
+    font-size: 1rem;
+    transition: 0.4s;
+}
+
+
+/* ESTILIZAÇÃO OBRIGATÓRIA */
+
+#open-modal {
+    background-color: #007bff;
+}
+
+button:hover{
+    opacity: 1;
+}
+
+#fade, #modal {
+    transition: .4s;
+    opacity: 1;
+    pointer-events: all; /*os eventos funcionam com opacidade 1*/
+    /* Note que o button não é afetado por esse ajuste, então funciona normalmente*/
+}
+
+#fade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 5;
+}
+
+#modal {
+    position: fixed;
+
+    /* Maneira correta de centralizar um position:fixed */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+
+    z-index: 10;
+    background-color: #fff;
+    width: 500px;
+    max-width: 90%;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+}
+
+.modal-body p {
+    margin-bottom: 1rem;
+}
+
+
+/* Aqui optamos por controlar a exibição do modal com a opacidade ao invés do display-none,
+por que com a opacidade conseguimos controlar a transição do elemento, ou seja, podemos inserir animações.*/
+#modal.hide,
+#fade.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#modal.hide{
+    top: 0; /*Garante que na animação a transição vá de cima para baixo*/
+}

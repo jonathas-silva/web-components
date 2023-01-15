@@ -1,0 +1,58 @@
+
+body {
+    display: flex;
+}
+
+/* Estilização e comportamento da aplicação */
+#dropdown-container {
+    padding: 2px;
+}
+
+#dropdown-container button {
+    padding: .6rem 1.2rem;
+    background-color: rgb(100, 82, 202);
+    color: #fff;
+    border: none;
+    border-radius: .25rem;
+    cursor: pointer;
+    opacity: 1;
+    font-size: 1rem;
+}
+
+#dropdown-container button:hover {
+    opacity: .6;
+}
+
+/* Isto vai garantir que apenas o container com o id #dropdown-menu que estiver IMEDIATAMENTE após o dropdown-btn seja afetado */
+.dropdown-btn:hover  + #dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+#dropdown-menu {
+    margin-top: 2px;
+    background-color: rgb(50, 40, 104);
+    padding: 0 5px 5px 5px;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    transition: 0.3s;
+    position: absolute;
+    z-index: 10;
+
+}
+
+#dropdown-menu:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+#dropdown-menu button {
+    background-color: transparent;
+    border-radius: 0;
+    margin: 5px;
+    border-bottom: 1px solid #9e8888;
+}
+
