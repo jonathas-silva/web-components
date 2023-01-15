@@ -1,9 +1,4 @@
 
-body {
-    display: flex;
-}
-
-/* Estilização e comportamento da aplicação */
 #dropdown-container {
     padding: 2px;
 }
