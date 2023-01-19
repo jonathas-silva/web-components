@@ -1,0 +1,124 @@
+* {
+    font-family: Helvetica;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    background-color: aliceblue;
+}
+
+#login-group {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+#login-group img {
+    padding-right: 30px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgb(27, 27, 104);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav button {
+    cursor: pointer;
+    padding: 0 20px 0 20px;
+    font-size: 1rem;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+}
+
+nav button:hover {
+    color: #ccc;
+}
+
+main {
+    z-index: 1;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin-top: 80px;
+    height: calc(100% - 80px);
+}
+
+#buttons-group {
+    display: flex;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+
+/* Acrescentar um display: none nos buttons group e diminuir a altura
+da nav */
+.escondido {
+    display: none;
+}
+
+
+@media (max-width: 465px) {
+
+    .toggle-nav {
+        height: 100%;
+        transition: 0.4s;
+    }
+
+    .toogle-buttons {
+        display: flex !important; /*Para sobreescrever o estilo anterior*/
+        flex-direction: column;
+        transition: 0.3s;
+    }
+
+    nav {
+        z-index: 10;
+        height: 78px;
+        padding: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.3s;
+    }
+
+    #buttons-group {
+        display: none;
+    }
+
+
+    /* estilos a serem aplicados no disparar do botão menu */
+
+
+
+    .hidden {
+        visibility: visible;
+        position: fixed;
+        top: 15px;
+        left: 0;
+    }
+
+    #login-group {
+        position: fixed;
+        top: 15px;
+        right: -17px;
+    }
+
+
+}
+

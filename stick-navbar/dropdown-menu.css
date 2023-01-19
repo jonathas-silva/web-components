@@ -1,0 +1,74 @@
+
+#dropdown-container {
+    position: relative;
+    padding: 2px;
+}
+
+.dropdown-btn {
+    padding: .6rem 1.2rem;
+    font-size: 1rem;
+}
+
+#dropdown-container button:hover {
+    opacity: .6;
+}
+
+/* Isto vai garantir que apenas o container com o id #dropdown-menu que estiver IMEDIATAMENTE após o dropdown-btn seja afetado */
+.dropdown-btn:hover  + #dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+#dropdown-menu {
+    margin-top: 2px;
+    background-color: rgb(50, 40, 104);
+    padding: 0 5px 5px 5px;
+    visibility: hidden;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    transition: 0.3s;
+    position: absolute;
+    min-width: 200px;
+    left: 0;
+    top: 40px;
+    z-index: 10;
+
+}
+
+#dropdown-menu:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+#dropdown-menu button {
+    background-color: transparent;
+    border-radius: 0;
+    margin: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #9e8888;
+}
+
+@media (max-width: 465px) {
+    #dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        position: initial;
+        z-index: 10;
+        background-color: transparent;    
+    }
+
+    #dropdown-menu button {
+        border: none;
+        color: yellow;
+
+    }
+
+    .dropdown-btn {
+        font-size: 1.5rem;
+        text-align: center;
+
+    }
+}
